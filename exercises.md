@@ -3,12 +3,16 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 2) cd ~/cli_sandbox
 
 1: Create a file called "evaluate.txt".
-1) touch evaluate.txt
+
+	touch evaluate.txt
 
 2: Output hidden files.
-1) ls -la
+	
+	ls -la
 
 3: Output who the active user is.
+
+	whoami
 
 4: Output hidden files.
 
