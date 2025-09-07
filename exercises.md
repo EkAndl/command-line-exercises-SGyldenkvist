@@ -60,7 +60,26 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 9: Create a file "pray.txt" containing: "sister medal sister experienced sister". Then output the unique lines.
 
+	echo "sister medal sister experienced sister" > pray.txt
+	tr ' ' '\n' < pray.txt | sort | uniq
+
+	Den første linje; overskriver (hvis pray.txt allerede eksisterer) eller opretter 		pray.txt og smider "sister..." Ind i den.
+
+	Den anden linje; "oversætter mellemrum til linjeskift, sorterer indholdet(alfabetisk), 		uniq, fjerner dubletter, så det bliver til:
+	"experienced, medal, sister"
+
 10: Create a file "medal.txt" containing: "recommend advice nerve excuse medal". Then search recursively for "medal".
+
+	echo "recommend ..." > medal.txt
+	grep -r "medal"
+
+	Den første linje opretter(/overskriver) medal filen og giver den et indhold
+	Den anden linje; grep = "søg efter", -r = rekursivt (nuværende og alle undermapper)
+	
+	viser:
+	./pray.txt:sister medal sister experienced sister
+	./medal.txt:recomend advice nerve excuse medal
+ 
 
 11: Output the full path you are on.
 
