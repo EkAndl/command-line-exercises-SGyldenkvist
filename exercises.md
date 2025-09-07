@@ -178,7 +178,11 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 22: Delete the last folder you created.
 
+	Fordi den sidste tilføjede mappe folder1, har en undermappe folder2,
+	så virker "rmdir folder1" ikke.
 
+	rm -r folder1
+	=-r = rekursivt dvs også undermapper, bliver slettet.
 
 23: Move one level up (stay inside "cli_sandbox").
 
