@@ -36,13 +36,20 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 6: Use: echo "evaluate recommend experienced pen advice" > "advice.txt" to create or overwrite "advice.txt".
 
 	echo "evaluate recommend experienced pen advice" > "advice.txt"
-	= smid "..." Ind i filen "..." (Overskriv eller opret, hvis den ikke findes"
+	= smid "..." Ind i filen "..." (Overskriv eller opret, hvis den ikke findes)
 
 	Test:
 	ls = se indhold/filer; "advice.txt", 
 	cat advice.txt = se indhold; "evaluate..." 
 
 7: Use: echo "cater terminal ethics cousin advantage" > "hill.txt" to create or overwrite "hill.txt".
+
+	echo "cater terminal ethics cousin advantage" > "hill.txt" 
+	
+	Test:
+	ls = se indhold/filer; "hill.txt", 
+	cat hill.txt = se indhold; "cater..." 
+	
 
 8: Output what's in the directory.
 
