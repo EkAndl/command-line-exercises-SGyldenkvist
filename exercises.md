@@ -194,7 +194,14 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 24: Use: echo "advice architecture rain surprise sister" > "discover.txt" to create or overwrite "discover.txt".
 
+	echo "advice architecture rain surprise sister" > "discover.txt"
+	tjek: ls : viser : "advice.txt", "discover.txt", "hill.txt", "pray.txt", "bay.txt", 
+	"evaluate.txt", "medal.txt", "testfolder"	
+
 25: Output the full path you are on.
+
+	pwd
+	= print working directory
 
 26: Create a file called "honor.txt" containing these words (one per line): "relative rider relative discover relative". Then count the lines.
 
