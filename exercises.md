@@ -149,11 +149,36 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 19: Move two folders up (but never leave "cli_sandbox").
 
+	Laver en forældre mappe med en child mappe:
+	mkdir -p folder1/folder2
+
+	Tjek: ls; viser indholdet, cd folder1, ls= viser indholdet; folder2 
+	(hop ind i folder2 = cd folder 2)
+	(eller: cd folder1/folder2)
+	pwd: /Users/silkegyldenkvist/cli_sandbox/folder1/folder2
+
+	Går 2 niveauer op:
+	cd ../..
+	pwd: /Users/silkegyldenkvist/cli_sandbox
+
+	
+
 20: Output hidden files.
+
+	ls -la
+	= ls viser filer i den nuværende mappe
+	= -l viser detaljer på en liste (ejer, størrelse, dato osv)
+	= -a viser skjulte filer (de starter med .)
 
 21: Create a file called "needle.txt" and immediately delete it.
 
+	touch needle.txt
+	tjek: ls
+	rm needle.txt
+
 22: Delete the last folder you created.
+
+
 
 23: Move one level up (stay inside "cli_sandbox").
 
