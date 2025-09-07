@@ -63,9 +63,11 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 	echo "sister medal sister experienced sister" > pray.txt
 	tr ' ' '\n' < pray.txt | sort | uniq
 
-	Den første linje; overskriver (hvis pray.txt allerede eksisterer) eller opretter 		pray.txt og smider "sister..." Ind i den.
+	Den første linje; overskriver (hvis pray.txt allerede eksisterer) eller opretter 
+	pray.txt og smider "sister..." Ind i den.
 
-	Den anden linje; "oversætter mellemrum til linjeskift, sorterer indholdet(alfabetisk), 		uniq, fjerner dubletter, så det bliver til:
+	Den anden linje; "oversætter mellemrum til linjeskift, sorterer indholdet(alfabetisk), 
+	uniq, fjerner dubletter, så det bliver til:
 	"experienced, medal, sister"
 
 10: Create a file "medal.txt" containing: "recommend advice nerve excuse medal". Then search recursively for "medal".
@@ -83,19 +85,67 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 11: Output the full path you are on.
 
+	pwd
+	= print working directory
+
+	viser: /Users/silkegyldenkvist/cli_sandbox
+
 12: Output what's in the directory.
+
+	ls
+	
+	viser: "advice.txt", "bay.txt", "evaluate.txt", "hill.txt", "medal.txt", "pray.txt"
 
 13: Delete the last folder you created.
 
+	opretter en mappe:
+	mkdir testfolder
+
+	tjek: ls
+
+	sletter mappen:
+	rmdir testfolder
+
+	tjek: ls
+
+
+
 14: Create a file called "degree.txt" and immediately delete it.
+
+	touch degree.txt
+	= opretter tom fil
+
+	rm degree.txt
+	=sletter filen
+
 
 15: Create a file called "surprise.txt".
 
+	touch surprise.txt
+
+
 16: Output the full path you are on.
+
+	pwd
 
 17: Delete the last file you created.
 
+	rm surprise.txt
+	=sletter surprise.txt filen
+
 18: Move one level up (stay inside "cli_sandbox").
+
+	Opretter en mappe:
+	mkdir testfolder
+
+	Går ind i testfolder-mappen:
+	cd testfolder
+
+	tjek: pwd; viser: /Users/silkegyldenkvist/cli_sandbox/testfolder
+
+	Går et level op og bliver inde i cli-sandbox:
+	cd ..
+	tjek: pwd; viser: /Users/silkegyldenkvist/cli_sandbox
 
 19: Move two folders up (but never leave "cli_sandbox").
 
