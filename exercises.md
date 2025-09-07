@@ -20,8 +20,9 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 5: Create a file "bay.txt" containing: "needle banish needle stock needle". Then output the sorted lines.
 
-	echo "needle banish needle stock needle" > bay.txt
-	Tjek at filen findes: ls, se indhold af filen: cat bay.txt
+	1. echo "needle banish needle stock needle" > bay.txt
+
+		Tjek: at filen findes: ls, se indhold af filen: cat bay.txt
 
 		tr ' ' '\n' < bay.txt
 		= hvert ord får sin egen linje (lodret)
@@ -29,9 +30,9 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 		tr ' ' '\n' < bay.txt | sort
 		= ordene sorteres alfabetisk (lodret)
 
-	tr ' ' '\n' < bay.txt | sort
-	= hvert ord får sin egen linje og bliver sorteret. 
-	"oversæt mellemrum til linjeskift i filen, sorter indholdet"
+	2. tr ' ' '\n' < bay.txt | sort
+		= hvert ord får sin egen linje og bliver sorteret. 
+		"oversæt mellemrum til linjeskift i filen, sorter indholdet"
 
 6: Use: echo "evaluate recommend experienced pen advice" > "advice.txt" to create or overwrite "advice.txt".
 
@@ -52,6 +53,10 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 	
 
 8: Output what's in the directory.
+	
+	ls
+	= viser indholdet (af cli_sandbox); "advice.txt", "bay.txt", "evaluate.txt", "hill.txt"
+
 
 9: Create a file "pray.txt" containing: "sister medal sister experienced sister". Then output the unique lines.
 
