@@ -186,6 +186,12 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 23: Move one level up (stay inside "cli_sandbox").
 
+	Jeg har stadig mappen testfolder, så jeg går ind i den:
+	cd testfolder
+
+	Og går et level op/tilbage til cli_sandbox:
+	cd ..
+
 24: Use: echo "advice architecture rain surprise sister" > "discover.txt" to create or overwrite "discover.txt".
 
 25: Output the full path you are on.
