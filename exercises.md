@@ -4,71 +4,263 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 1: Create a file called "evaluate.txt".
 
+	touch evaluate.txt
+
 2: Output hidden files.
+	
+	ls -la
 
 3: Output who the active user is.
 
+	whoami
+
 4: Output hidden files.
+
+	ls -la
 
 5: Create a file "bay.txt" containing: "needle banish needle stock needle". Then output the sorted lines.
 
+	1. echo "needle banish needle stock needle" > bay.txt
+
+		Tjek: at filen findes: ls, se indhold af filen: cat bay.txt
+
+		tr ' ' '\n' < bay.txt
+		= hvert ord får sin egen linje (lodret)
+
+		tr ' ' '\n' < bay.txt | sort
+		= ordene sorteres alfabetisk (lodret)
+
+	2. tr ' ' '\n' < bay.txt | sort
+		= hvert ord får sin egen linje og bliver sorteret. 
+		"oversæt mellemrum til linjeskift i filen, sorter indholdet"
+
 6: Use: echo "evaluate recommend experienced pen advice" > "advice.txt" to create or overwrite "advice.txt".
+
+	echo "evaluate recommend experienced pen advice" > "advice.txt"
+	= smid "..." Ind i filen "..." (Overskriv eller opret, hvis den ikke findes)
+
+	Test:
+	ls = se indhold/filer; "advice.txt", 
+	cat advice.txt = se indhold; "evaluate..." 
 
 7: Use: echo "cater terminal ethics cousin advantage" > "hill.txt" to create or overwrite "hill.txt".
 
+	echo "cater terminal ethics cousin advantage" > "hill.txt" 
+	
+	Test:
+	ls = se indhold/filer; "hill.txt", 
+	cat hill.txt = se indhold; "cater..." 
+	
+
 8: Output what's in the directory.
+	
+	ls
+	= viser indholdet (af cli_sandbox); "advice.txt", "bay.txt", "evaluate.txt", "hill.txt"
+
 
 9: Create a file "pray.txt" containing: "sister medal sister experienced sister". Then output the unique lines.
 
+	echo "sister medal sister experienced sister" > pray.txt
+	tr ' ' '\n' < pray.txt | sort | uniq
+
+	Den første linje; overskriver (hvis pray.txt allerede eksisterer) eller opretter 
+	pray.txt og smider "sister..." Ind i den.
+
+	Den anden linje; "oversætter mellemrum til linjeskift, sorterer indholdet(alfabetisk), 
+	uniq, fjerner dubletter, så det bliver til:
+	"experienced, medal, sister"
+
 10: Create a file "medal.txt" containing: "recommend advice nerve excuse medal". Then search recursively for "medal".
+
+	echo "recommend ..." > medal.txt
+	grep -r "medal"
+
+	Den første linje opretter(/overskriver) medal filen og giver den et indhold
+	Den anden linje; grep = "søg efter", -r = rekursivt (nuværende og alle undermapper)
+	
+	viser:
+	./pray.txt:sister medal sister experienced sister
+	./medal.txt:recomend advice nerve excuse medal
+ 
 
 11: Output the full path you are on.
 
+	pwd
+	= print working directory
+
+	viser: /Users/silkegyldenkvist/cli_sandbox
+
 12: Output what's in the directory.
+
+	ls
+	
+	viser: "advice.txt", "bay.txt", "evaluate.txt", "hill.txt", "medal.txt", "pray.txt"
 
 13: Delete the last folder you created.
 
+	opretter en mappe:
+	mkdir testfolder
+
+	tjek: ls
+
+	sletter mappen:
+	rmdir testfolder
+
+	tjek: ls
+
+
+
 14: Create a file called "degree.txt" and immediately delete it.
+
+	touch degree.txt
+	= opretter tom fil
+
+	rm degree.txt
+	=sletter filen
+
 
 15: Create a file called "surprise.txt".
 
+	touch surprise.txt
+
+
 16: Output the full path you are on.
+
+	pwd
 
 17: Delete the last file you created.
 
+	rm surprise.txt
+	=sletter surprise.txt filen
+
 18: Move one level up (stay inside "cli_sandbox").
+
+	Opretter en mappe:
+	mkdir testfolder
+
+	Går ind i testfolder-mappen:
+	cd testfolder
+
+	tjek: pwd; viser: /Users/silkegyldenkvist/cli_sandbox/testfolder
+
+	Går et level op og bliver inde i cli-sandbox:
+	cd ..
+	tjek: pwd; viser: /Users/silkegyldenkvist/cli_sandbox
 
 19: Move two folders up (but never leave "cli_sandbox").
 
+	Laver en forældre mappe med en child mappe:
+	mkdir -p folder1/folder2
+
+	Tjek: ls; viser indholdet, cd folder1, ls= viser indholdet; folder2 
+	(hop ind i folder2 = cd folder 2)
+	(eller: cd folder1/folder2)
+	pwd: /Users/silkegyldenkvist/cli_sandbox/folder1/folder2
+
+	Går 2 niveauer op:
+	cd ../..
+	pwd: /Users/silkegyldenkvist/cli_sandbox
+
+	
+
 20: Output hidden files.
+
+	ls -la
+	= ls viser filer i den nuværende mappe
+	= -l viser detaljer på en liste (ejer, størrelse, dato osv)
+	= -a viser skjulte filer (de starter med .)
 
 21: Create a file called "needle.txt" and immediately delete it.
 
+	touch needle.txt
+	tjek: ls
+	rm needle.txt
+
 22: Delete the last folder you created.
+
+	Fordi den sidste tilføjede mappe folder1, har en undermappe folder2,
+	så virker "rmdir folder1" ikke.
+
+	rm -r folder1
+	=-r = rekursivt dvs også undermapper, bliver slettet.
 
 23: Move one level up (stay inside "cli_sandbox").
 
+	Jeg har stadig mappen testfolder, så jeg går ind i den:
+	cd testfolder
+
+	Og går et level op/tilbage til cli_sandbox:
+	cd ..
+
 24: Use: echo "advice architecture rain surprise sister" > "discover.txt" to create or overwrite "discover.txt".
+
+	echo "advice architecture rain surprise sister" > "discover.txt"
+	tjek: ls : viser : "advice.txt", "discover.txt", "hill.txt", "pray.txt", "bay.txt", 
+	"evaluate.txt", "medal.txt", "testfolder"	
 
 25: Output the full path you are on.
 
+	pwd
+	= print working directory
+	Viser: /Users/silkegyldenkvist/cli_sandbox
+
 26: Create a file called "honor.txt" containing these words (one per line): "relative rider relative discover relative". Then count the lines.
+
+	printf 'relative\nrider\nrelative\ndiscover\nrelative\n' > honor.txt
+	= newline efter hvert ord, sat ind i filen honor.txt, opret hvis ikke-eksisterende.
+	
+	cat -n honor.txt
+	= vis indholdet med linjenumre foran hver linje
+
+	(Tæl linjerne:)
+	grep -c '^' honor.txt
+
 
 27: Create a file called "honor.txt" and immediately delete it.
 
+	touch honor.txt
+	rm honor.txt
+
+
 28: If already inside "cli_sandbox", create a directory "shallow" and move into the directory.
+
+	mkdir shallow && cd shallow
+	=lav mappen og gå ind i den
+	
 
 29: Create a file "appreciate.txt" containing: "shallow pray shallow nerve shallow". Then output the unique lines.
 
+	printf 'shallow\npray\nshallow\nnerve\nshallow\n' > appreciate.txt
+	=sæt ordene ind på hver deres linje i filen (opret hvis ikke findes)
+
+	sort -u appreciate.txt
+	=sorter kun unikke linjer fra filen
+
+	(Output: nerve, pray, shallow)  
+
 30: Delete the last file you created.
+
+	rm appreciate.txt
 
 31: Delete the last file you created.
 
+	Jeg har ikke en nyligtoprettet fil. Så.. Men jeg kan sikre mig at den sidste er slettet 	og få lov til at kører kommandoen (nu hvor den er slettet), ved at skrive:
+	rm -f appreciate.txt
+	(force)
+
 32: Move one level up (stay inside "cli_sandbox").
+
+	cd ..
+	(jeg er i cli_sandbox, jeg var I shallow)
 
 33: If already inside "cli_sandbox", create a directory "identity" and move into the directory.
 
+	mkdir -p identity && cd identity
+	= -p, sikre ingen fejl hvis mappen allerede findes (men det gør den ikke og er derfor 		overflødig)
+
 34: Create a file "difficulty.txt" containing: "plane rider difficulty needle shallow". Then search recursively for "difficulty".
+
+	
 
 35: Create a file called "difficulty.txt" and immediately delete it.
 
