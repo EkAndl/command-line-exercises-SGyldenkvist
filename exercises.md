@@ -202,24 +202,65 @@ IMPORTANT: Do ALL exercises inside ~/cli_sandbox to avoid changing important fil
 
 	pwd
 	= print working directory
+	Viser: /Users/silkegyldenkvist/cli_sandbox
 
 26: Create a file called "honor.txt" containing these words (one per line): "relative rider relative discover relative". Then count the lines.
 
+	printf 'relative\nrider\nrelative\ndiscover\nrelative\n' > honor.txt
+	= newline efter hvert ord, sat ind i filen honor.txt, opret hvis ikke-eksisterende.
+	
+	cat -n honor.txt
+	= vis indholdet med linjenumre foran hver linje
+
+	(Tæl linjerne:)
+	grep -c '^' honor.txt
+
+
 27: Create a file called "honor.txt" and immediately delete it.
+
+	touch honor.txt
+	rm honor.txt
+
 
 28: If already inside "cli_sandbox", create a directory "shallow" and move into the directory.
 
+	mkdir shallow && cd shallow
+	=lav mappen og gå ind i den
+	
+
 29: Create a file "appreciate.txt" containing: "shallow pray shallow nerve shallow". Then output the unique lines.
+
+	printf 'shallow\npray\nshallow\nnerve\nshallow\n' > appreciate.txt
+	=sæt ordene ind på hver deres linje i filen (opret hvis ikke findes)
+
+	sort -u appreciate.txt
+	=sorter kun unikke linjer fra filen
+
+	(Output: nerve, pray, shallow)  
 
 30: Delete the last file you created.
 
+	rm appreciate.txt
+
 31: Delete the last file you created.
+
+	Jeg har ikke en nyligtoprettet fil. Så.. Men jeg kan sikre mig at den sidste er slettet 	og få lov til at kører kommandoen (nu hvor den er slettet), ved at skrive:
+	rm -f appreciate.txt
+	(force)
 
 32: Move one level up (stay inside "cli_sandbox").
 
+	cd ..
+	(jeg er i cli_sandbox, jeg var I shallow)
+
 33: If already inside "cli_sandbox", create a directory "identity" and move into the directory.
 
+	mkdir -p identity && cd identity
+	= -p, sikre ingen fejl hvis mappen allerede findes (men det gør den ikke og er derfor 		overflødig)
+
 34: Create a file "difficulty.txt" containing: "plane rider difficulty needle shallow". Then search recursively for "difficulty".
+
+	
 
 35: Create a file called "difficulty.txt" and immediately delete it.
 
